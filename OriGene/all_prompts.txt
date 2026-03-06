@@ -1,0 +1,363 @@
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py:775:                prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-776-                # Biomedical Research Intelligent Search Assistant
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-777-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-778-                ## Context
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-779-                - Main research question: "{query}"
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-780-                - Current date: {current_time}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-781-                - Iteration: {len(self.questions_by_iteration)} completed rounds
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-782-                - Past sub-questions: {str(self.questions_by_iteration)}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-783-                - Current accumulated knowledge: {current_knowledge}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-784-                               
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-785-                ## Your Task
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-786-                1. Analyze the main query to identify its core components, key terms, and primary questions.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-787-                2. Break down the main query into no more than {self.questions_per_iteration} sub-queries that collectively address the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-788-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-789-                ## Guidelines
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-790-                1. Identify key information gaps in current knowledge
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-791-                2. Formulate each sub-query as a clear, open-ended question that avoids bias, assumptions, or leading language (e.g., use neutral phrasing instead of affirmative or suggestive statements).
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-792-                3. Include only sub-queries that are essential and directly relevant to addressing the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-793-                4. Break down complex concepts or relationships into distinct, independently answerable questions.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-794-                5. Keep sub-queries concise, specific, and straightforward (e.g., inquire about definitions, roles, or relationships, such as "What is X?" or "How does X relate to Y?").
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-795-                6. Avoid repeating past searches
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-796-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-797-                ## Output Format
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-798-                You must provide your response in the following structured JSON format:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-799-                {{
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-800-                    "thoughts": "Brief analysis of the problem and what needs investigation",
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-801-                    "strategy": ["1", "2", "3", "4", "5"],
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-802-                    "sub_queries": ["Search_Query_1", "Search_Query_2", "Search_Query_3", "Search_Query_4", "Search_Query_5"]
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-803-                }}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-804-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-805-                ## Important Notes
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py:812:                prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-813-                # Intelligent Search Assistant
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-814-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-815-                ## Context
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-816-                - Main query to answer: "{query}"
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-817-                - Current date: {current_time}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-818-                - This is the first search iteration
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-819-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-820-                 ## Your Task
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-821-                1. Analyze the main query to identify its core components, key terms, and primary questions.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-822-                2. Break down the main query into no more than {self.questions_per_iteration} sub-queries that collectively address the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-823-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-824-                ## Guidelines
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-825-                1. Identify key information gaps in current knowledge
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-826-                2. Formulate each sub-query as a clear, open-ended question that avoids bias, assumptions, or leading language (e.g., use neutral phrasing instead of affirmative or suggestive statements).
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-827-                3. Include only sub-queries that are essential and directly relevant to addressing the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-828-                4. Break down complex concepts or relationships into distinct, independently answerable questions.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-829-                5. Keep sub-queries concise, specific, and straightforward (e.g., inquire about definitions, roles, or relationships, such as "What is X?" or "How does X relate to Y?").
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-830-                6. Avoid repeating past searches
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-831-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-832-                ## Output Format
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-833-                You must provide your response in the following structured JSON format:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-834-                {{
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-835-                    "thoughts": "Brief analysis of the problem and what needs investigation",
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-836-                    "strategy": ["1", "2", "3", "4", "5"],
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-837-                    "sub_queries": ["Search_Query_1", "Search_Query_2", "Search_Query_3", "Search_Query_4", "Search_Query_5"]
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-838-                }}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-839-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-840-                ## Important Notes
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-841-                - Use terminology CONSISTENT with the main query, preserving specialized terms without arbitrary modifications.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-842-                - Each query should target different aspects of the research question
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py:1044:            prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1045-    You are assisting in organizing multi-round research findings for the main question: "{query}".
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1046-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1047-    Instructions:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1048-    - Consolidate the following markdown facts into a clean, concise format.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1049-    - DO NOT add new information or modify the meaning.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1050-    - DO NOT remove or reformat <URL> references – they are placeholders for citations.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1051-    - Avoid repeating similar facts or elaborating unnecessarily.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1052-    - Use natural Markdown formatting (paragraphs or bullet points).
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1053-    - Try to keep the result under 2000 words.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1054-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1055-    ### Findings:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1056-    {knowledge_raw_md}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1057-            """.strip()
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1058-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1059-        except Exception as e:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1060-            logger.warning(
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1061-                f"process_multiple_knowledge_chunks (preprocessing) failed: {e}"
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1062-            )
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1063-            return current_key_info.strip()
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1064-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1065-        try:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1066-            response = await invoke_with_timeout_and_retry(
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1067-                self.fast_model,
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1068-                prompt=prompt,
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1069-                timeout=60.0,
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1070-                max_retries=2,
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1071-                retry_delay=30.0,
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1072-            )
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1073-            current_knowledge = response.content.strip()
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1074-
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py:1115:                prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1116-                # Intelligent Search Assistant
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1117-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1118-                ## Context
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1119-                - Main query: "{query}"
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1120-                - Current date: {current_time}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1121-                - Already searched {len(self.questions_by_iteration)} iterations
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1122-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1123-                ## Current Status
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1124-                - Past questions: {str(self.questions_by_iteration)}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1125-                - Gathered knowledge: {current_knowledge}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1126-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1127-                ## Your Task
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1128-                Analyze what's missing to fully answer the main query. Generate exactly {self.questions_per_iteration} focused sub-questions for downstream tool selection.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1129-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1130-                ## Reference Example
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1131-                The following is a detailed example of how to decompose a similar research query into multiple search objectives and tools:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1132-                <thinking_template only for task:{query}, do not use it directly, start from here>
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1133-                            {template} for in user query: {query}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1134-                <thinking_template only for task:{query}, do not use it directly, end from here>
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1135-                - The thinking template is only a reference supplement to help resolve implicit preferences when user requirements are unclear.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1136-                - If the user provides a specific, concrete action strategy or clear preferences/constraints, strictly prioritize the user's plan and ignore any template preferences that do not strongly connect to the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1137-                - If the thinking template is weakly related or irrelevant to the main query, use it selectively or ignore it to avoid drifting.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1138-                - IMPORTANT: the template may mention tools. Your `sub_queries` MUST NOT include any tool names, tool tags, brackets, or tool-routing hints.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1139-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1140-                ## Guidelines
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1141-                1. Identify key information gaps in current knowledge
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1142-                2. Formulate each sub-query as a clear, open-ended question that avoids bias, assumptions, or leading language (e.g., use neutral phrasing instead of affirmative or suggestive statements).
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1143-                3. Include only sub-queries that are essential and directly relevant to addressing the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1144-                4. Break down complex concepts or relationships into distinct, independently answerable questions.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1145-                5. Keep sub-queries concise, specific, and straightforward (e.g., inquire about definitions, roles, or relationships, such as "What is X?" or "How does X relate to Y?").
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py:1163:                prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1164-                # Intelligent Search Assistant
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1165-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1166-                ## Context
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1167-                - Main query to answer: "{query}"
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1168-                - Current date: {current_time}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1169-                - This is the first search iteration
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1170-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1171-                ## Your Task
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1172-                Analyze what's missing to fully answer the main query. Generate exactly {self.questions_per_iteration} focused sub-questions for downstream tool selection.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1173-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1174-                ## Reference Example
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1175-                The following is a detailed example of how to decompose a similar research query into multiple search objectives and tools:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1176-                <thinking_template only for task:{query}, do not use it directly, start from here>
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1177-                            {template} for in user query: {query}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1178-                <thinking_template only for task:{query}, do not use it directly, end from here>
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1179-                - The thinking template is only a reference supplement to help resolve implicit preferences when user requirements are unclear.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1180-                - If the user provides a specific, concrete action strategy or clear preferences/constraints, strictly prioritize the user's plan and ignore any template preferences that do not strongly connect to the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1181-                - If the thinking template is weakly related or irrelevant to the main query, use it selectively or ignore it to avoid drifting.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1182-                - IMPORTANT: the template may mention tools. Your `sub_queries` MUST NOT include any tool names, tool tags, brackets, or tool-routing hints.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1183-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1184-                ## Guidelines
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1185-                1. Identify key information gaps in current knowledge
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1186-                2. Formulate each sub-query as a clear, open-ended question that avoids bias, assumptions, or leading language (e.g., use neutral phrasing instead of affirmative or suggestive statements).
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1187-                3. Include only sub-queries that are essential and directly relevant to addressing the main query.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1188-                4. Break down complex concepts or relationships into distinct, independently answerable questions.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1189-                5. Keep sub-queries concise, specific, and straightforward (e.g., inquire about definitions, roles, or relationships, such as "What is X?" or "How does X relate to Y?").
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1190-                6. Avoid repeating past searches
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1191-                7. Each `sub_queries[i]` MUST be a normal sentence ending with a question mark ("?") and MUST NOT contain tool names or any bracketed tool syntax.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1192-                
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1193-                ## Output Format
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py:1343:        prompt = f"""You are a research synthesis agent working on the query: {query}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1344-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1345-        You've collected multiple sets of keypoints from different subqueries. Below are all the accumulated keypoints with their citations:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1346-        current_time: {current_time}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1347-        {current_knowledge}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1348-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1349-        Please synthesize and compress these keypoints into a concise, non-redundant list that:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1350-        1. Eliminates duplicated information
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1351-        2. Merges related points
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1352-        3. Preserves the most important insights
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1353-        4. Retains all necessary citations and urls for each point
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1354-        5. Maintains the markdown list format
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1355-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1356-        Your goal is to create a comprehensive yet streamlined summary that captures all essential information while reducing redundancy. When multiple sources support the same point, include all relevant citations.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1357-        Generate the compressed markdown keypoints list. Then follows the sources information.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1358-        """
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1359-        try:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1360-            response = await invoke_with_timeout_and_retry(
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1361-                self.model, prompt, timeout=60.0, max_retries=3, retry_delay=60.0
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1362-            )
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1363-        except Exception as e:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1364-            logger.warning(f"Failed to compress knowledge: {e}")
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1365-            log_msg = (
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1366-                f"[{datetime.now().isoformat()}] Failed to compress knowledge: {e}\n"
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1367-            )
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1368-            write_log_process_safe(self.error_log_path, log_msg)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1369-            raise e
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1370-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1371-        response_content = remove_think_tags(response.content)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1372-        response_content = str(response_content)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system.py-1373-
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py:177:        prompt =  f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-178-        Your task is to **extract information only** from this tool-calling result.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-179-        Do **NOT** analyse, judge, interpret or invent – just copy what is there.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-180-        Extract only information that clearly stated in raw data and directly relevant to Tool query，skip the information that contradict or error source data or lack direct evidence.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-181-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-182-        ### Context
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-183-        - Tool Query: {query}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-184-        - Tool name: {tool_name}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-185-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-186-        ### Raw Data
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-187-        ```text
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-188-        {primary_txt}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-189-        {json.dumps(urls_info, ensure_ascii=False)}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-190-        
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-191-        ### Extraction Rules
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-192-        1. Facts or important detials – quote verbatim from the raw data.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-193-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-194-        2. references – for every distinct HTTP/HTTPS link produce an object:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-195-        -- "url" : the link itself
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-196-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-197-        -- "description" : short phrase copied verbatim from title / meta / primary
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-198-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-199-        -- "apa_citation" : if the URL points to a scholarly paper (DOI / PubMed / arXiv / journal),recover an APA-style citation from nearby useful text(but not invent);otherwise output an empty string.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-200-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-201-        3. Never invent information; leave fields empty rather than guessing.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-202-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-203-        4. No interpretation, no main-query answer.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-204-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-205-        5. For isolated facts (no clear context), add Tool query to indicate their origin
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-206-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/search_system_support.py-207-        6. If nothing fits a section, return an empty JSON array [].
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py:225:        prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-226-        You are an experienced disease biologist, please briefly explain what this is: {item}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-227-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-228-        Note: 1. Please summarize in one paragraph; 2. Do not use bullet points; 3. Keep the answer under 100 words.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-229-        """
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-230-        result = self.llm.invoke(prompt)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-231-        return result.content
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-232-    
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-233-    def batch_explain_item(self, item_list: list):
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-234-        """
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-235-        Batch explain the items that are going to be searched. Make it better to do tool retrieval.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-236-        """
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py:237:        prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-238-        ## Task Description
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-239-        You are an experienced disease biologist, please briefly explain what these are: {item_list}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-240-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-241-        ## Notes
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-242-        1. Please summarize in one paragraph; 
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-243-        2. Do not use bullet points; 
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-244-        3. Keep the answer under 100 words.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-245-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-246-        ## Output Format
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-247-        Please provide your analysis in the following JSON format:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-248-        ```json
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-249-        {{
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-250-            "item1": "[explanation1]",
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-251-            "item2": "[explanation2]",
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-252-            ...
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-253-        }}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-254-        ```
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-255-        """
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-256-        result = self.llm.invoke(prompt)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-257-        item_explanation_dict = extract_and_convert_dict(result.content)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-258-        item_explanation_dict = {
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-259-            exact_match_entity_type(item_in_result, item_list): explanation for item_in_result, explanation in item_explanation_dict.items()
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-260-        }
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-261-        
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-262-        return item_explanation_dict
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-263-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-264-    def retrieve_tools_from_candidates(self, query: str, candidate_tools: List[str], top_k: int = 5, explain_item: bool = False) -> List[str]:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-265-        """
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-266-        Retrieve the most relevant tools from a list of candidate tools for a given query using embedding similarity.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_embedding_retriever.py-267-        
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py:280:        prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-281-# Your Task
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-282-You are a senior data scientist. I currently have an MCP service with many tools. Please help me determine whether the tool execution was successful based on the tool's output.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-283-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-284-# Tool calling result
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-285-Top 500 tokens of the full content: {tool_response[:500]}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-286-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-287-# Instructions
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-288-1. The returned result may be a JSON-formatted string (part of the full tool calling result), null, or an empty string.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-289-2. If the returned result contains words like "error", "404", "400", or "No data found", it indicates that the request failed.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-290-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-291-# Output Format
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-292-Return data in python dict format as follows:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-293-```python
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-294-{{
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-295-    "success": [success status] # True if the tool ran successfully with substantial information returned, False if it failed
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-296-}}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-297-```
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-298-"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-299-        response = self.llm_light.invoke(prompt)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-300-        result = extract_and_convert_dict(response.content)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-301-        
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-302-        if isinstance(result, dict) and "success" in result:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-303-            return result["success"]
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-304-        else:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-305-            return False
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-306-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-307-    def log_execution_failed_tool(self, tool_invoke_list, tool_calling_results):
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-308-        for tool_invoke_info, tool_calling_result in zip(tool_invoke_list, tool_calling_results):
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-309-            if tool_calling_result.get("success", False):
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_executor.py-310-                continue
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py:245:        prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-246-## Task Description
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-247-You are a professional disease biologist. Please filter out entities without clear specificity from the input information and return the filtered information.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-248-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-249-## Input
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-250-Original query: {query}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-251-Extracted entities: {entities}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-252-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-253-## Instructions
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-254-1. Remove entities without clear specificity: The retained entities should have meaningful information and be proper nouns rather than generic terms. For example, for drug-related entities, we should be able to find a specific drug or a class of drugs through the entity name, rather than a simple generic term (such as "effective drug", "drug molecule"). Terms like "appropriate targets" and "related disease" should not be considered as informative entities.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-255-2. Only remove entities, do not add new entities or modify the retained entities.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-256-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-257-## Output Format
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-258-Please provide your output in the following list format:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-259-[
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-260-    [[entity_1 text]", "[category of entity 1]"],
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-261-    [[entity_2 text]", "[category of entity 2]"],
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-262-    ...
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-263-]
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-264-"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-265-        result = self.llm.invoke(prompt)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-266-        filtered_entities = extract_and_convert_list(result.content)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-267-        # Defensive: LLM sometimes returns invalid JSON and parser returns None.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-268-        # In that case, fall back to original extracted entities to avoid crashing.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-269-        if filtered_entities is None:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-270-            filtered_entities = entities
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-271-        entity_and_relationship["entities"] = filtered_entities
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-272-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-273-        entity_set = set([entity[0] for entity in filtered_entities])
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-274-        entity_and_relationship["relationships"] = [
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-275-            relationship
+--
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py:706:        prompt = f"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-707-## Task Description
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-708-You are a professional disease biologist. Please check if each tool usage is reasonable.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-709-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-710-## Input
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-711-Tool invoke list: {tool_invoke_list}
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-712-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-713-## Instructions
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-714-1. The input is a list where each element is a dict containing three keys: item (entity to search), tool (tool to call), and tool_input (tool input parameters).
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-715-2. Check if each tool's input is reasonable based on the tool name and input parameters. Remove tool calls that are unreasonable. Unreasonable cases include:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-716-    (a) Input type mismatch with tool type: For example, if the tool is get_general_info_by_compound_name but the input parameter is a target name;
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-717-    (b) Expected input and actual input have different information levels: For example, if the tool is get_clinical_pharmacology_by_drug_name but the input parameter is "drug molecule" (should input specific drug name instead of a general term);
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-718-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-719-## Notes
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-720-1. Only remove unreasonable elements from the tool invoke list, do not add new elements or modify the retained elements.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-721-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-722-## Output Format
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-723-Please provide your analysis in the following JSON format:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-724-"""
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-725-        result = self.llm_light.invoke(prompt)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-726-        filtered_tool_invoke_list = extract_and_convert_list(result.content)
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-727-        return filtered_tool_invoke_list
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-728-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-729-    async def run_batch(self, query_list):
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-730-        """
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-731-        Run the tool selector for a list of sub-queries in parallel.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-732-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-733-        Args:
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-734-            query_list: A list of sub-queries.
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-735-
+/mnt/c/Users/user/Desktop/asmaa_folder/OriGene/src/local_deep_research/tool_selector.py-736-        Returns:

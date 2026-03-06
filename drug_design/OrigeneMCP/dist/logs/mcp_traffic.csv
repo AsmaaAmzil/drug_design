@@ -1,0 +1,56 @@
+timestamp,toolset,method,url,client_ip,request_params,response
+2025-07-14T17:00:54.558217,ncbi_mcp,POST,http://127.0.0.1:8788/ncbi_mcp/mcp/,127.0.0.1,"{'name': 'get_gene_metadata_by_gene_name', 'arguments': {'name': 'TP53'}}",{'status_code': 200}
+2026-03-04T08:26:28.412521,,GET,http://127.0.0.1:8788/,127.0.0.1,,{'status_code': 404}
+2026-03-04T08:29:51.608235,,GET,http://127.0.0.1:8788/,127.0.0.1,,{'status_code': 404}
+2026-03-04T08:31:37.814975,health,GET,http://127.0.0.1:8788/health,127.0.0.1,,{'status_code': 404}
+2026-03-04T08:31:37.836159,tools,GET,http://127.0.0.1:8788/tools,127.0.0.1,,{'status_code': 404}
+2026-03-04T08:31:37.859575,openapi.json,GET,http://127.0.0.1:8788/openapi.json,127.0.0.1,,{'status_code': 200}
+2026-03-04T10:22:28.342642,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'Alzheimer's disease diagnosis methods'}}",{'status_code': 200}
+2026-03-04T10:22:28.395836,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'paper_search', 'arguments': {'query': 'Alzheimer's disease diagnosis techniques biomarkers imaging'}}",{'status_code': 200}
+2026-03-04T10:22:30.164214,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_disease_name', 'arguments': {'name': 'Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:22:30.433861,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'Alzheimer's disease diagnosis research advancements'}}",{'status_code': 200}
+2026-03-04T10:22:30.440530,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_disease_description_by_name', 'arguments': {'disease_name': 'Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:23:32.957127,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_disease_name', 'arguments': {'name': 'Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:23:48.507617,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'Alzheimer's disease biomarkers'}}",{'status_code': 200}
+2026-03-04T10:23:48.519107,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'paper_search', 'arguments': {'query': 'Alzheimer's disease diagnostic methods progression'}}",{'status_code': 200}
+2026-03-04T10:23:48.529006,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_target', 'arguments': {'query_str': 'Alzheimer's disease progression markers'}}",{'status_code': 200}
+2026-03-04T10:23:48.537596,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_activity', 'arguments': {'query_str': 'Alzheimer's disease progression'}}",{'status_code': 200}
+2026-03-04T10:23:48.545493,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_disease_description_by_name', 'arguments': {'disease_name': 'Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:25:49.486286,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_disease_name', 'arguments': {'name': 'Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:26:08.093648,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'Alzheimer's disease biomarkers'}}",{'status_code': 200}
+2026-03-04T10:26:08.101415,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'paper_search', 'arguments': {'query': 'Alzheimer's disease biomarkers'}}",{'status_code': 200}
+2026-03-04T10:26:08.112920,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_target', 'arguments': {'query_str': 'Alzheimer's disease targets'}}",{'status_code': 200}
+2026-03-04T10:26:08.125182,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_assay', 'arguments': {'query_str': 'Alzheimer's disease assays'}}",{'status_code': 200}
+2026-03-04T10:26:08.132913,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_associated_drugs_by_disease_name', 'arguments': {'disease_name': 'Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:28:16.940572,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'paper_search', 'arguments': {'query': 'recent biomarkers for Alzheimer's disease diagnosis'}}",{'status_code': 200}
+2026-03-04T10:28:16.980989,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'advances in imaging techniques for Alzheimer's disease diagnosis'}}",{'status_code': 200}
+2026-03-04T10:28:17.021990,uniprot_mcp,POST,http://localhost:8788/uniprot_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_protein_or_gene_name', 'arguments': {'name': 'APP', 'sepcies': 'Homo sapiens'}}",{'status_code': 200}
+2026-03-04T10:28:26.844272,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_activity', 'arguments': {'query_str': 'Alzheimer's disease diagnostic tests comparison'}}",{'status_code': 200}
+2026-03-04T10:28:28.752177,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'paper_search', 'arguments': {'query': 'novel diagnostic approaches for Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:28:28.764288,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_disease_name', 'arguments': {'name': 'Alzheimer's disease'}}",{'status_code': 200}
+2026-03-04T10:28:36.620722,uniprot_mcp,POST,http://localhost:8788/uniprot_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_protein_or_gene_name', 'arguments': {'name': 'APP', 'sepcies': 'Homo sapiens'}}",{'status_code': 200}
+2026-03-04T10:28:37.772502,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_disease_description_by_name', 'arguments': {'disease_name': 'Alzheimer's'}}",{'status_code': 200}
+2026-03-04T10:39:54.727529,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'paper_search', 'arguments': {'query': 'triple-negative breast cancer signaling pathways'}}",{'status_code': 200}
+2026-03-04T10:39:57.515929,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_target', 'arguments': {'query_str': 'triple-negative breast cancer'}}",{'status_code': 200}
+2026-03-04T10:40:02.776884,uniprot_mcp,POST,http://localhost:8788/uniprot_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_protein_or_gene_name', 'arguments': {'query': 'TP53'}}",{'status_code': 200}
+2026-03-04T10:40:02.785803,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_gene_ontology_by_name', 'arguments': {'target_name': 'BRCA1'}}",{'status_code': 200}
+2026-03-04T10:40:02.794392,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_associated_targets_by_disease_name', 'arguments': {'disease_name': 'triple-negative breast cancer'}}",{'status_code': 200}
+2026-03-04T10:40:02.801514,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'triple-negative breast cancer molecular characteristics'}}",{'status_code': 200}
+2026-03-04T10:41:41.221546,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'triple-negative breast cancer therapeutic targets'}}",{'status_code': 200}
+2026-03-04T10:41:41.269378,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'paper_search', 'arguments': {'query': 'triple-negative breast cancer cancer drivers'}}",{'status_code': 200}
+2026-03-04T10:41:41.309202,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'triple-negative breast cancer pathways'}}",{'status_code': 200}
+2026-03-04T10:41:45.376621,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_target', 'arguments': {'query_str': 'triple-negative breast cancer targets'}}",{'status_code': 200}
+2026-03-04T10:41:48.041582,uniprot_mcp,POST,http://localhost:8788/uniprot_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_protein_or_gene_name', 'arguments': {'query': 'BRCA1', 'sepcies': 'Homo sapiens'}}",{'status_code': 200}
+2026-03-04T10:41:48.055980,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_gene_ontology_by_name', 'arguments': {'target_name': 'TP53'}}",{'status_code': 200}
+2026-03-04T10:42:34.797828,kegg_mcp,POST,http://localhost:8788/kegg_mcp/mcp/,127.0.0.1,"{'name': 'kegg_find', 'arguments': {'db': 'pathway', 'query': 'pathways'}}",{'status_code': 200}
+2026-03-04T10:42:35.117269,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_id_description_by_name', 'arguments': {'targetName': 'EGFR'}}",{'status_code': 200}
+2026-03-04T10:42:35.123647,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_interactions_by_name', 'arguments': {'target_name': 'BRCA1'}}",{'status_code': 200}
+2026-03-04T10:42:35.590115,uniprot_mcp,POST,http://localhost:8788/uniprot_mcp/mcp/,127.0.0.1,"{'name': 'get_general_info_by_protein_or_gene_name', 'arguments': {'query': 'BRCA1', 'sepcies': 'Homo sapiens'}}",{'status_code': 200}
+2026-03-04T10:44:24.791134,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_target', 'arguments': {'query_str': 'BRCA1'}}",{'status_code': 200}
+2026-03-04T10:44:29.567859,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_gene_ontology_by_name', 'arguments': {'target_name': 'BRCA1'}}",{'status_code': 200}
+2026-03-04T10:44:29.574736,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_classes_by_name', 'arguments': {'target_name': 'BRCA1'}}",{'status_code': 200}
+2026-03-04T10:44:29.581500,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_associated_diseases_phenotypes_by_target_name', 'arguments': {'target_name': 'BRCA1'}}",{'status_code': 200}
+2026-03-04T10:44:29.588628,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_synonyms_by_name', 'arguments': {'target_name': 'target'}}",{'status_code': 200}
+2026-03-04T10:45:06.847924,chembl_mcp,POST,http://localhost:8788/chembl_mcp/mcp/,127.0.0.1,"{'name': 'search_target', 'arguments': {'query_str': 'targets'}}",{'status_code': 200}
+2026-03-04T10:45:07.030743,search_mcp,POST,http://localhost:8788/search_mcp/mcp/,127.0.0.1,"{'name': 'tavily_search', 'arguments': {'query': 'network centrality targets'}}",{'status_code': 200}
+2026-03-04T10:45:07.036917,opentargets_mcp,POST,http://localhost:8788/opentargets_mcp/mcp/,127.0.0.1,"{'name': 'get_target_synonyms_by_name', 'arguments': {'target_name': 'targets'}}",{'status_code': 200}
